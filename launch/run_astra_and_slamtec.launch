@@ -1,0 +1,15 @@
+<!-- Launch astra and slamtec with Static TFs-->
+
+<launch>
+    <!-- astra ROS Driver -->
+    <include file="$(find astra_camera)/launch/astra.launch"/>
+    
+    <!-- SLAMTEC M1M1 Driver -->
+    <include file="$(find slamware_ros_sdk)/launch/slamware_ros_sdk_server_node.launch">   
+    <arg name="ip_address" value="192.168.11.1"/>
+    </include>
+
+    <!-- Needed Static Transforms between the sensors -->
+    <include file="$(find rtabmap_utils)/launch/static_tfs_astra_slamtec.launch"/>
+
+</launch>
