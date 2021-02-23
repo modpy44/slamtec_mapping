@@ -1,0 +1,17 @@
+digraph G {
+"camera_link" -> "camera_depth_frame"[label="Broadcaster: /camera_base_link\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1614110611.133 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_link" -> "camera_rgb_frame"[label="Broadcaster: /camera_base_link1\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1614110611.133 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_depth_frame" -> "camera_depth_optical_frame"[label="Broadcaster: /camera_base_link2\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1614110611.133 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_rgb_frame" -> "camera_rgb_optical_frame"[label="Broadcaster: /camera_base_link3\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1614110611.133 sec old)\nBuffer length: 0.000 sec\n"];
+"slamware_map" -> "odom"[label="Broadcaster: /map2odom\nAverage rate: 29.648 Hz\nMost recent transform: 1614110611.214 ( -0.081 sec old)\nBuffer length: 4.992 sec\n"];
+"base_link" -> "laser"[label="Broadcaster: /base2laser\nAverage rate: 19.900 Hz\nMost recent transform: 1614110611.227 ( -0.094 sec old)\nBuffer length: 5.025 sec\n"];
+"odom" -> "base_link"[label="Broadcaster: /slamware_ros_sdk_server_node\nAverage rate: 20.123 Hz\nMost recent transform: 1614110611.095 ( 0.039 sec old)\nBuffer length: 4.870 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1614110611.133"[ shape=plaintext ] ;
+ }->"camera_link";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1614110611.133"[ shape=plaintext ] ;
+ }->"slamware_map";
+}
