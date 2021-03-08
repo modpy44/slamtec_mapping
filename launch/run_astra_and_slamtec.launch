@@ -1,5 +1,4 @@
 
-<!-- Launch astra and slamtec with Static TFs-->
 
 <launch>
     <!-- astra ROS Driver -->
@@ -9,9 +8,5 @@
     <include file="$(find slamware_ros_sdk)/launch/slamware_ros_sdk_server_node.launch">   
     <arg name="ip_address" value="192.168.11.1"/>
     </include>
-
-
-    <!-- Needed Static Transforms between the sensors -->
-    <!--<include file="$(find slamtec_mapping)/launch/static_tfs_astra_slamtec.launch"/>-->
 
 </launch>
