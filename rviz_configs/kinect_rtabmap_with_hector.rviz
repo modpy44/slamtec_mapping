@@ -85,8 +85,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_link:
-          Value: false
         camera_depth_frame:
           Value: false
         camera_depth_optical_frame:
@@ -99,10 +97,10 @@ Visualization Manager:
           Value: true
         camera_rgb_optical_frame:
           Value: false
+        hector_map:
+          Value: true
         laser:
           Value: true
-        odom:
-          Value: false
         slamware_map:
           Value: false
       Marker Scale: 1
@@ -112,18 +110,17 @@ Visualization Manager:
       Show Names: true
       Tree:
         slamware_map:
-          odom:
-            base_link:
-              laser:
-                camera_link:
-                  camera_depth_frame:
-                    camera_depth_optical_frame:
-                      {}
-                  camera_laser_link:
+          hector_map:
+            laser:
+              camera_link:
+                camera_depth_frame:
+                  camera_depth_optical_frame:
                     {}
-                  camera_rgb_frame:
-                    camera_rgb_optical_frame:
-                      {}
+                camera_laser_link:
+                  {}
+                camera_rgb_frame:
+                  camera_rgb_optical_frame:
+                    {}
       Update Interval: 0
       Value: true
     - Class: rviz/Image
@@ -216,12 +213,12 @@ Visualization Manager:
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: true
-      Enabled: false
+      Enabled: true
       Name: Map
-      Topic: /slamware_ros_sdk_server_node/map
+      Topic: /map
       Unreliable: false
       Use Timestamp: false
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
